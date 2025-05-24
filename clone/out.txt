@@ -1,0 +1,4 @@
+t_die 310
+death
+0 [3] has taken a fork
+1748103630031 [1] died
