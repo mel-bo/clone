@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/24 19:34:36 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:56:51 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	init_philo(t_data *data, char *arg)
 		data->philo[i].stop_eat = false;
 		data->philo[i].data = data;
 		data->philo[i].eat = 0;
+		data->philo[i].last_meal = 0;
 		data->philo[i].r_fork = &data->fork[i].fork;
 		data->philo[i].l_fork = &data->fork[(i + 1) % data->nb_philo].fork;
 		if (arg)

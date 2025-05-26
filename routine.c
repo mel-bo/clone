@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:09:03 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/24 23:15:47 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/26 19:01:31 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	is_alive(t_philo *philo)
 {
+	// printf("is alive [%d]\n", philo->id);
 	pthread_mutex_lock(&philo->data->stop_tex);
 	if (philo->data->stop_sim == false
-		&& get_time() - philo->eat >= philo->data->t_die)
+		&& curr_time(philo) - philo->last_meal >= philo->data->t_die)
 	{
 		philo->data->stop_sim = true;
 		atomic_eating(philo, "died");
@@ -29,7 +30,7 @@ int	is_alive(t_philo *philo)
 
 void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 {
-	philo->eat = get_time();
+	// philo->eat = get_time();
 	pthread_mutex_lock(f1);
 	usleep(100);
 	if (stop_sim(philo) == false)
@@ -37,6 +38,7 @@ void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 		// printf("%ld [%d] has taken a fork\n", curr_time(philo), philo->id);
 	while (philo->data->nb_philo == 1)
 	{
+		// printf("solo [%d]\n", philo->id);
 		if (is_alive(philo))
 		{
 			pthread_mutex_unlock(f1);
@@ -47,17 +49,31 @@ void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 	pthread_mutex_lock(f2);
 	if (stop_sim(philo) == false)
 		atomic_eating(philo, "has taken a fork");
+	// printf("2e fork [%d]\n", philo->id);
+	philo->eat = get_time();
 	is_alive(philo);
 	if (stop_sim(philo) == false)
 	{
 		// printf("%ld [%d] is eating\n", curr_time(philo), philo->id);
 		atomic_eating(philo, "is eating");
 		while (get_time() - philo->eat < philo->data->t_eat)
+		{
+			if (is_alive(philo))
+			{
+				pthread_mutex_unlock(f1);
+				pthread_mutex_unlock(f2);
+				return ;
+			}
 			usleep(100);
+		}
 	}
+	// printf("%ld [%d] fini de manger\n", curr_time(philo), philo->id);
+	// philo->eat = curr_time(philo);
+	philo->last_meal = curr_time(philo);
 	pthread_mutex_unlock(f1);
 	pthread_mutex_unlock(f2);
 	nb_turn(philo);
+	// printf("fin de routine [%d]\n", philo->id);
 }
 
 void	eating(t_philo *philo)

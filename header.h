@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:27:42 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/24 17:04:22 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:56:40 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_philo
 	int				id;
 	int				turn;
 	int				nb_sim;
+	int				last_meal;
 	long			t_start;
 	long			eat;
 	long			sleep;
