@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:55:19 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/26 19:50:20 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/02 22:42:33 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ long	curr_time(t_philo *philo)
 
 void	atomic_eating(t_philo *philo, char *str)
 {
-	pthread_mutex_lock(&philo->data->print);
-	printf("%ld %d %s\n", curr_time(philo), philo->id, str);
-	pthread_mutex_unlock(&philo->data->print);
+	// pthread_mutex_lock(&philo->data->print);
+	if (stop_sim(philo) == false)
+		printf("%ld %d %s\n", curr_time(philo), philo->id, str);
+	// pthread_mutex_unlock(&philo->data->print);
 }

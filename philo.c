@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:25:48 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/24 16:43:26 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:39:37 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	mutex_destroy(t_data *data)
 	}
 	pthread_mutex_destroy(&data->stop_tex);
 	pthread_mutex_destroy(&data->print);
+	pthread_mutex_destroy(&data->st_eating);
 }
 
 int	sim_cleaning(t_data *data, int n)

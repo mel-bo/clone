@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:27:42 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/26 16:56:40 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/31 21:23:23 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_philo
 	long			eat;
 	long			sleep;
 	bool			stop_eat;
+	bool			lock;
 	pthread_t		philo;
 	pthread_mutex_t	*r_fork;
 	pthread_mutex_t	*l_fork;
@@ -53,6 +54,7 @@ typedef struct s_data
 	pthread_t		monitor;
 	pthread_mutex_t	stop_tex;
 	pthread_mutex_t	print;
+	pthread_mutex_t	st_eating;
 	t_philo			*philo;
 	t_fork			*fork;
 }	t_data;

@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/26 16:56:51 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/05/31 21:25:48 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	init_philo(t_data *data, char *arg)
 		data->philo[i].id = j;
 		data->philo[i].turn = 0;
 		data->philo[i].stop_eat = false;
+		data->philo[i].lock = false;
 		data->philo[i].data = data;
 		data->philo[i].eat = 0;
 		data->philo[i].last_meal = 0;
@@ -80,6 +81,7 @@ int	init_mutex(t_data *data)
 		printf("Mutex print init failed\n");
 		return (error_init_cleaning(data, 1, 2), 1);
 	}
+	pthread_mutex_init(&data->st_eating, NULL);
 	return (0);
 }
 
