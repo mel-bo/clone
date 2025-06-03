@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:27:42 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/03 07:26:30 by dell             ###   ########.fr       */
+/*   Updated: 2025/06/03 20:37:49 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ long	get_time(void);
 long	curr_time(t_philo *philo);
 int		sim_cleaning(t_data *data, int n);
 void	atomic_eating(t_philo *philo, char *str);
-void	atomic_sleeping(t_philo *philo, char *str);
-void	atomic_thinking(t_philo *philo, char *str);
 
 //------------PARSING-------------
 int		parsing(int ac, char **av);
