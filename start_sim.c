@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:40:46 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/03 19:40:21 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/03 21:20:59 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,8 @@ void	monitor(t_data *data)
 		if (monitor_check(&data->philo[i]))
 		{
 			data->stop_sim = true;
-			printf("%ld %d died\n", curr_time(&data->philo[i]), data->philo[i].id);
+			atomic_eating(&data->philo[i], "died");
+			// printf("%ld %d died\n", curr_time(&data->philo[i]), data->philo[i].id);
 			pthread_mutex_unlock(&data->stop_tex);
 			return ;
 		}

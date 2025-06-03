@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:09:03 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/03 19:28:40 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/03 21:07:15 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	one_philo(t_philo *philo, pthread_mutex_t *f1)
 void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 {
 	pthread_mutex_lock(f1);
-	// if (stop_sim(philo) == false)
-	atomic_eating(philo, "has taken a fork");
+	if (stop_sim(philo) == false)
+		atomic_eating(philo, "has taken a fork");
 	if (philo->data->nb_philo == 1)
 		return (one_philo(philo, f1));
 	// while (philo->data->nb_philo == 1)
@@ -62,12 +62,16 @@ void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 	// 	usleep(100);
 	// }
 	pthread_mutex_lock(f2);
-	// if (stop_sim(philo) == false)
-	atomic_eating(philo, "has taken a fork");
-	philo->eat = get_time();
-	atomic_eating(philo, "is eating");
-	while (get_time() - philo->eat < philo->data->t_eat)
-		usleep(100);
+	if (stop_sim(philo) == false)
+		atomic_eating(philo, "has taken a fork");
+	// philo->eat = get_time();
+	if (stop_sim(philo) == false)
+	{
+		philo->eat = get_time();
+		atomic_eating(philo, "is eating");
+		while (get_time() - philo->eat < philo->data->t_eat)
+			usleep(100);
+	}
 	// if (stop_sim(philo) == false)
 	// {
 	// 	atomic_eating(philo, "is eating");
