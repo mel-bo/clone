@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:27:42 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/31 21:23:23 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/03 07:26:30 by dell             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_data
 	bool			stop_sim;
 	pthread_t		monitor;
 	pthread_mutex_t	stop_tex;
-	pthread_mutex_t	print;
+	pthread_mutex_t	time;
 	pthread_mutex_t	st_eating;
 	t_philo			*philo;
 	t_fork			*fork;

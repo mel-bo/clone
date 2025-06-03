@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/05/31 21:25:48 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/03 07:26:30 by dell             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	error_init_cleaning(t_data *data, int n, int j)
 	if (j == 1 || j == 2)
 		pthread_mutex_destroy(&data->stop_tex);
 	if (j == 2)
-		pthread_mutex_destroy(&data->print);
+		pthread_mutex_destroy(&data->time);
 	free(data->philo);
 	free(data->fork);
 }
@@ -76,9 +76,9 @@ int	init_mutex(t_data *data)
 		printf("Mutex STOP_TEX init failed\n");
 		return (error_init_cleaning(data, 1, 1), 1);
 	}
-	if (pthread_mutex_init(&data->print, NULL) != 0)
+	if (pthread_mutex_init(&data->time, NULL) != 0)
 	{
-		printf("Mutex print init failed\n");
+		printf("Mutex time init failed\n");
 		return (error_init_cleaning(data, 1, 2), 1);
 	}
 	pthread_mutex_init(&data->st_eating, NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_sim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:40:46 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/02 23:22:50 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/03 07:32:01 by dell             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,7 @@ void	monitor(t_data *data)
 		if (data->philo[i].lock == true)
 		{
 			pthread_mutex_lock(&data->stop_tex);
-			if (curr_time(&data->philo[i]) - data->philo[i].last_meal > data->t_die 
-				|| curr_time(&data->philo[i]) - data->philo[i].sleep > data->t_die)
+			if (curr_time(&data->philo[i]) - data->philo[i].last_meal > data->t_die)
 			{
 				// printf("je suis le monitor\n");
 				data->stop_sim = true;
