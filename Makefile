@@ -6,12 +6,12 @@
 #    By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:26:33 by mel-bout          #+#    #+#              #
-#    Updated: 2025/06/03 20:04:38 by mel-bout         ###   ########.fr        #
+#    Updated: 2025/06/05 13:13:46 by mel-bout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g #-fsanitize=thread
+CFLAGS = -Wall -Werror -Wextra #-g #-fsanitize=thread
  
 SRCS = 	philo.c ft_atoi.c parsing.c ft_isdigit.c utils.c init.c start_sim.c routine.c
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/03 07:26:30 by dell             ###   ########.fr       */
+/*   Updated: 2025/06/05 12:02:56 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	error_init_cleaning(t_data *data, int n, int j)
+void	error_init_cleanup(t_data *data, int n)
 {
 	int	i;
 
@@ -22,12 +22,28 @@ void	error_init_cleaning(t_data *data, int n, int j)
 		pthread_mutex_destroy(&data->fork[i].fork);
 		i++;
 	}
-	if (j == 1 || j == 2)
-		pthread_mutex_destroy(&data->stop_tex);
-	if (j == 2)
-		pthread_mutex_destroy(&data->time);
 	free(data->philo);
 	free(data->fork);
+}
+int	cleanup(t_data *data)
+{
+	error_init_cleanup(data, data->nb_philo);
+	return (0);
+}
+
+int	cleanup2(t_data *data)
+{
+	error_init_cleanup(data, data->nb_philo);
+	pthread_mutex_destroy(&data->stop_tex);
+	return (0);
+}
+
+int	cleanup3(t_data *data)
+{
+	error_init_cleanup(data, data->nb_philo);
+	pthread_mutex_destroy(&data->stop_tex);
+	pthread_mutex_destroy(&data->print);
+	return (0);
 }
 
 void	init_philo(t_data *data, char *arg)
@@ -57,6 +73,16 @@ void	init_philo(t_data *data, char *arg)
 	}
 }
 
+int	safe_mutex(pthread_mutex_t *m, char *s, int (*cleanup)(t_data *), t_data *d)
+{
+	if (pthread_mutex_init(m, NULL) != 0)
+	{
+		printf("Mutex %s init failed\n", s);
+		cleanup(d);
+		return (1);
+	}
+	return (0);
+}
 int	init_mutex(t_data *data)
 {
 	int	i;
@@ -67,21 +93,13 @@ int	init_mutex(t_data *data)
 		if (pthread_mutex_init(&data->fork[i].fork, NULL) != 0)
 		{
 			printf("Mutex %d init failed\n", i);
-			return (error_init_cleaning(data, i, 0), 1);
+			return (error_init_cleanup(data, i), 1);
 		}
 		i++;
 	}
-	if (pthread_mutex_init(&data->stop_tex, NULL) != 0)
-	{
-		printf("Mutex STOP_TEX init failed\n");
-		return (error_init_cleaning(data, 1, 1), 1);
-	}
-	if (pthread_mutex_init(&data->time, NULL) != 0)
-	{
-		printf("Mutex time init failed\n");
-		return (error_init_cleaning(data, 1, 2), 1);
-	}
-	pthread_mutex_init(&data->st_eating, NULL);
+	safe_mutex(&data->stop_tex, "STOP_TEX", cleanup, data);
+	safe_mutex(&data->print, "PRINT", cleanup2, data);
+	safe_mutex(&data->st_eating, "ST_EATING", cleanup3, data);
 	return (0);
 }
 

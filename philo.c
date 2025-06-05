@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dell <dell@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:25:48 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/03 07:26:30 by dell             ###   ########.fr       */
+/*   Updated: 2025/06/05 08:09:48 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	mutex_destroy(t_data *data)
 		i++;
 	}
 	pthread_mutex_destroy(&data->stop_tex);
-	pthread_mutex_destroy(&data->time);
+	pthread_mutex_destroy(&data->print);
 	pthread_mutex_destroy(&data->st_eating);
 }
 
