@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 12:02:56 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/07 21:28:07 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	error_init_cleanup(t_data *data, int n)
 	free(data->philo);
 	free(data->fork);
 }
+
 int	cleanup(t_data *data)
 {
 	error_init_cleanup(data, data->nb_philo);
@@ -58,7 +59,7 @@ void	init_philo(t_data *data, char *arg)
 		data->philo[i].id = j;
 		data->philo[i].turn = 0;
 		data->philo[i].stop_eat = false;
-		data->philo[i].lock = false;
+		data->philo[i].lock = 0;
 		data->philo[i].data = data;
 		data->philo[i].eat = 0;
 		data->philo[i].last_meal = 0;
@@ -83,6 +84,7 @@ int	safe_mutex(pthread_mutex_t *m, char *s, int (*cleanup)(t_data *), t_data *d)
 	}
 	return (0);
 }
+
 int	init_mutex(t_data *data)
 {
 	int	i;
@@ -100,6 +102,7 @@ int	init_mutex(t_data *data)
 	safe_mutex(&data->stop_tex, "STOP_TEX", cleanup, data);
 	safe_mutex(&data->print, "PRINT", cleanup2, data);
 	safe_mutex(&data->st_eating, "ST_EATING", cleanup3, data);
+	pthread_mutex_init(&data->lock, NULL);
 	return (0);
 }
 

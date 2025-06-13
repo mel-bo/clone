@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:49:55 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 08:13:19 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/05 18:16:39 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 long	get_time(void)
 {
-	struct timeval tv;
+	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
-	return (tv.tv_sec *1000 + tv.tv_usec / 1000);
+	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
 long	curr_time(t_philo *philo)

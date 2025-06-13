@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:09:03 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 17:47:16 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/05 19:33:20 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,9 @@ void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 		atomic_eating(philo, "has taken a fork");
 	if (philo->data->nb_philo == 1)
 		return (one_philo(philo, f1));
-	// while (philo->data->nb_philo == 1)
-	// {
-	// 	// printf("solo [%d]\n", philo->id);
-	// 	if (is_alive(philo))
-	// 	{
-	// 		pthread_mutex_unlock(f1);
-	// 		return ;
-	// 	}
-	// 	usleep(100);
-	// }
 	pthread_mutex_lock(f2);
 	if (stop_sim(philo) == false)
 		atomic_eating(philo, "has taken a fork");
-	// philo->eat = get_time();
 	if (stop_sim(philo) == false)
 	{
 		philo->eat = get_time();
@@ -72,18 +61,10 @@ void	is_eating(t_philo *philo, pthread_mutex_t *f1, pthread_mutex_t *f2)
 		while (get_time() - philo->eat < philo->data->t_eat)
 			usleep(100);
 	}
-	// if (stop_sim(philo) == false)
-	// {
-	// 	atomic_eating(philo, "is eating");
-	// 	while (get_time() - philo->eat < philo->data->t_eat)
-	// 		usleep(100);
-	// }
 	last_meal(philo);
-	// philo->last_meal = curr_time(philo);
 	pthread_mutex_unlock(f1);
 	pthread_mutex_unlock(f2);
 	nb_turn(philo);
-	// printf("\033[1;31m%ld [%d] a fini de manger || death = [%d]\033[0m\n", curr_time(philo),philo->id, philo->data->stop_sim);
 }
 
 void	eating(t_philo *philo)
@@ -95,8 +76,6 @@ void	eating(t_philo *philo)
 	else
 	{
 		is_eating(philo, philo->l_fork, philo->r_fork);
-		if (philo->data->nb_philo % 2 == 0)
-			usleep(10);
 	}
 }
 
@@ -106,16 +85,11 @@ void	sleeping(t_philo *philo)
 	philo->sleep = get_time();
 	while (get_time() - philo->sleep < philo->data->t_sleep)
 		usleep(100);
-	usleep(10);
-	// if (philo->data->nb_philo % 2 == 1 && philo->id % 2 == 1)
-	// 	usleep(100);
-	// printf("[%d] a fini de dormir\n", philo->id);
 }
 
 void	thinking(t_philo *philo)
 {
 	atomic_eating(philo, "is thinking");
-	if (philo->data->nb_philo % 2 == 1 && philo->id % 2 == 1)
-		usleep(100);
-	// printf("[%d] a fini de penser\n", philo->id);
+	// if (philo->data->nb_philo % 2 == 1 && philo->id % 2 == 1)
+	// 	usleep(10);
 }
