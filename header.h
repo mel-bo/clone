@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:27:42 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 08:09:48 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/13 19:09:37 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ typedef struct s_data
 	int				t_die;
 	int				t_eat;
 	int				t_sleep;
+	int				counter;
 	bool			stop_sim;
+	bool			table;
 	pthread_t		monitor;
 	pthread_mutex_t	stop_tex;
 	pthread_mutex_t	print;

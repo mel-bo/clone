@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 18:48:13 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 12:02:56 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/13 19:10:00 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ int	init_data(t_data *data, char **arg)
 	data->t_eat = ft_atoi(arg[3]);
 	data->t_sleep = ft_atoi(arg[4]);
 	data->stop_sim = false;
+	data->table = false;
+	data->counter = 0;
 	data->philo = malloc(sizeof(t_philo) * data->nb_philo);
 	if (!(data->philo))
 		return (1);

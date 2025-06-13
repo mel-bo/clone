@@ -6,11 +6,21 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:40:46 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/05 14:31:07 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/13 20:46:57 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+bool	table_mutex(t_philo *philo)
+{
+	bool	sim;
+
+	pthread_mutex_lock(&philo->data->st_eating);
+	sim = philo->data->table;
+	pthread_mutex_unlock(&philo->data->st_eating);
+	return (sim);
+}
 
 void	nb_turn(t_philo *philo)
 {
@@ -31,12 +41,26 @@ bool	stop_sim(t_philo *philo)
 	pthread_mutex_unlock(&philo->data->stop_tex);
 	return (sim);
 }
-
+void	set_table(t_philo *philo)
+{
+	pthread_mutex_lock(&philo->data->st_eating);
+	philo->data->counter++;
+	printf("%d\n", philo->data->counter);
+	pthread_mutex_unlock(&philo->data->st_eating);
+	while (1)
+	{
+		if (table_mutex(philo) == true)
+			return ;
+		usleep(10);
+	}
+}
 void	*routine(void *arg)
 {
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
+	set_table(philo);
+	// printf("la tablet est set\n");
 	philo->t_start = get_time();
 	if (philo->t_start > 0)
 		philo->lock = true;
@@ -98,7 +122,18 @@ int	monitor_check(t_philo *philo)
 	pthread_mutex_unlock(&philo->data->stop_tex);
 	return (0);
 }
-
+int	check_table(t_data *data)
+{
+	pthread_mutex_lock(&data->st_eating);
+	if (data->counter == data->nb_philo)
+	{
+		data->table = true;
+		pthread_mutex_unlock(&data->st_eating);
+		return (1);
+	}
+	pthread_mutex_unlock(&data->st_eating);
+	return (0);
+}
 void	monitor(t_data *data)
 {
 	int	i;
@@ -106,18 +141,24 @@ void	monitor(t_data *data)
 	i = 0;
 	while (1)
 	{
-		if (monitor_check(&data->philo[i]))
+		// printf("check_table\n");
+		if (check_table(data))
 		{
-			data->stop_sim = true;
-			atomic_eating(&data->philo[i], "died");
-			pthread_mutex_unlock(&data->stop_tex);
-			return ;
+			// printf("apres la douane\n");
+			if (monitor_check(&data->philo[i]))
+			{
+				data->stop_sim = true;
+				atomic_eating(&data->philo[i], "died");
+				pthread_mutex_unlock(&data->stop_tex);
+				return ;
+			}
+			if (!stop_eating(data))
+				return ;
+			i++;
+			if (i == data->nb_philo)
+				i = 0;
+			usleep(10);
 		}
-		if (!stop_eating(data))
-			return ;
-		i++;
-		if (i == data->nb_philo)
-			i = 0;
 		usleep(10);
 	}
 }
