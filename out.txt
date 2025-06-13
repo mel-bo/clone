@@ -1,72 +1,675 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+0 65 has taken a fork
+0 65 has taken a fork
+0 65 is eating
+0 69 has taken a fork
+0 69 has taken a fork
+0 69 is eating
+0 3 has taken a fork
+0 3 has taken a fork
+0 93 has taken a fork
+0 93 has taken a fork
+0 93 is eating
+0 3 is eating
+0 19 has taken a fork
+0 19 has taken a fork
+0 19 is eating
+0 43 has taken a fork
+0 43 has taken a fork
+0 43 is eating
 0 1 has taken a fork
 0 1 has taken a fork
 0 1 is eating
-0 3 has taken a fork
-0 3 has taken a fork
-0 3 is eating
-200 3 is sleeping
-200 2 has taken a fork
-200 1 is sleeping
-200 4 has taken a fork
-200 2 has taken a fork
-200 2 is eating
-200 4 has taken a fork
-200 4 is eating
-400 3 is thinking
-400 3 has taken a fork
-400 2 is sleeping
-400 4 is sleeping
-400 3 has taken a fork
-400 3 is eating
-400 1 is thinking
-400 1 has taken a fork
-400 1 has taken a fork
-400 1 is eating
-600 2 is thinking
-600 4 is thinking
-600 3 is sleeping
-600 2 has taken a fork
-600 1 is sleeping
-600 2 has taken a fork
-600 2 is eating
-600 4 has taken a fork
-600 4 has taken a fork
-600 4 is eating
-800 4 is sleeping
-800 3 is thinking
-800 1 is thinking
-800 1 has taken a fork
+0 73 has taken a fork
+0 73 has taken a fork
+0 73 is eating
+0 63 has taken a fork
+0 63 has taken a fork
+0 63 is eating
+0 11 has taken a fork
+0 11 has taken a fork
+0 11 is eating
+0 37 has taken a fork
+0 37 has taken a fork
+0 37 is eating
+0 55 has taken a fork
+0 55 has taken a fork
+0 55 is eating
+0 23 has taken a fork
+0 23 has taken a fork
+0 23 is eating
+0 51 has taken a fork
+0 51 has taken a fork
+0 51 is eating
+0 27 has taken a fork
+0 27 has taken a fork
+0 27 is eating
+0 41 has taken a fork
+0 41 has taken a fork
+0 41 is eating
+0 95 has taken a fork
+0 95 has taken a fork
+0 95 is eating
+0 7 has taken a fork
+0 7 has taken a fork
+0 7 is eating
+0 39 has taken a fork
+0 39 has taken a fork
+0 39 is eating
+0 61 has taken a fork
+0 61 has taken a fork
+0 61 is eating
+0 57 has taken a fork
+0 57 has taken a fork
+0 57 is eating
+0 33 has taken a fork
+0 33 has taken a fork
+0 33 is eating
+0 21 has taken a fork
+0 21 has taken a fork
+0 21 is eating
+0 17 has taken a fork
+0 17 has taken a fork
+0 17 is eating
+0 5 has taken a fork
+0 5 has taken a fork
+0 5 is eating
+0 89 has taken a fork
+0 89 has taken a fork
+0 89 is eating
+0 13 has taken a fork
+0 13 has taken a fork
+0 13 is eating
+0 15 has taken a fork
+0 15 has taken a fork
+0 15 is eating
+0 35 has taken a fork
+0 35 has taken a fork
+0 35 is eating
+0 49 has taken a fork
+0 49 has taken a fork
+0 49 is eating
+0 91 has taken a fork
+0 91 has taken a fork
+0 91 is eating
+0 75 has taken a fork
+0 75 has taken a fork
+0 75 is eating
+0 47 has taken a fork
+0 47 has taken a fork
+0 47 is eating
+0 80 has taken a fork
+0 80 has taken a fork
+0 80 is eating
+0 8 has taken a fork
+0 44 has taken a fork
+0 79 has taken a fork
+0 31 has taken a fork
+0 31 has taken a fork
+0 31 is eating
+0 25 has taken a fork
+0 25 has taken a fork
+0 25 is eating
+0 29 has taken a fork
+0 29 has taken a fork
+0 29 is eating
+0 67 has taken a fork
+0 67 has taken a fork
+0 67 is eating
+0 71 has taken a fork
+0 71 has taken a fork
+0 71 is eating
+0 52 has taken a fork
+0 59 has taken a fork
+0 59 has taken a fork
+0 59 is eating
+0 77 has taken a fork
+0 77 has taken a fork
+0 77 is eating
+0 87 has taken a fork
+0 87 has taken a fork
+0 87 is eating
+0 99 has taken a fork
+0 99 has taken a fork
+0 99 is eating
+0 97 has taken a fork
+0 97 has taken a fork
+0 97 is eating
+0 83 has taken a fork
+0 83 has taken a fork
+0 83 is eating
+0 85 has taken a fork
+0 85 has taken a fork
+0 85 is eating
+400 47 is sleeping
+400 11 is sleeping
+400 96 has taken a fork
+400 46 has taken a fork
+400 46 has taken a fork
+400 46 is eating
+400 95 is sleeping
+400 10 has taken a fork
+400 10 has taken a fork
+400 96 has taken a fork
+400 69 is sleeping
+400 96 is eating
+400 84 has taken a fork
+400 94 has taken a fork
+400 97 is sleeping
+400 10 is eating
+400 68 has taken a fork
+400 85 is sleeping
+400 89 is sleeping
+400 88 has taken a fork
+400 61 is sleeping
+400 60 has taken a fork
+400 32 has taken a fork
+400 100 has taken a fork
+400 68 has taken a fork
+400 21 is sleeping
+400 68 is eating
+400 33 is sleeping
+400 66 has taken a fork
+400 20 has taken a fork
+400 1 is sleeping
+400 49 is sleeping
+400 58 has taken a fork
+400 48 has taken a fork
+400 48 has taken a fork
+400 48 is eating
+400 35 is sleeping
+400 34 has taken a fork
+400 73 is sleeping
+400 34 has taken a fork
+400 34 is eating
+400 29 is sleeping
+400 72 has taken a fork
+400 54 has taken a fork
+400 54 has taken a fork
+400 54 is eating
+400 28 has taken a fork
+400 13 is sleeping
+400 92 has taken a fork
+400 92 has taken a fork
+400 92 is eating
+400 100 has taken a fork
+400 98 has taken a fork
+400 98 has taken a fork
+400 98 is eating
+400 100 is eating
+400 56 has taken a fork
+400 93 is sleeping
+400 56 has taken a fork
+400 56 is eating
+400 76 has taken a fork
+400 76 has taken a fork
+400 76 is eating
+400 12 has taken a fork
+400 77 is sleeping
+400 12 has taken a fork
+400 88 has taken a fork
+400 12 is eating
+400 88 is eating
+400 30 has taken a fork
+400 87 is sleeping
+400 90 has taken a fork
+400 90 has taken a fork
+400 30 has taken a fork
+400 94 has taken a fork
+400 90 is eating
+400 30 is eating
+400 60 has taken a fork
+400 60 is eating
+400 86 has taken a fork
+400 86 has taken a fork
+400 86 is eating
+400 94 is eating
+400 32 has taken a fork
+400 55 is sleeping
+400 32 is eating
+400 59 is sleeping
+400 84 has taken a fork
+400 84 is eating
+400 70 has taken a fork
+400 81 has taken a fork
+400 99 is sleeping
+400 70 has taken a fork
+400 81 has taken a fork
+400 42 has taken a fork
+400 70 is eating
+400 81 is eating
+400 83 is sleeping
+400 42 has taken a fork
+400 42 is eating
+400 79 has taken a fork
+400 43 is sleeping
+400 71 is sleeping
+400 79 is eating
+400 25 is sleeping
+400 17 is sleeping
+400 16 has taken a fork
+400 72 has taken a fork
+400 16 has taken a fork
+400 16 is eating
+400 72 is eating
+400 75 is sleeping
+400 24 has taken a fork
+400 36 has taken a fork
+400 24 has taken a fork
+400 24 is eating
+400 36 has taken a fork
+400 36 is eating
+400 74 has taken a fork
+400 57 is sleeping
+400 4 has taken a fork
+400 74 has taken a fork
+400 74 is eating
+400 27 is sleeping
+400 64 has taken a fork
+400 2 has taken a fork
+400 3 is sleeping
+400 64 has taken a fork
+400 91 is sleeping
+400 2 has taken a fork
+400 64 is eating
+400 2 is eating
+400 22 has taken a fork
+400 23 is sleeping
+400 14 has taken a fork
+400 14 has taken a fork
+400 14 is eating
+400 6 has taken a fork
+400 6 has taken a fork
+400 4 has taken a fork
+400 4 is eating
+400 63 is sleeping
+400 62 has taken a fork
+400 62 has taken a fork
+400 62 is eating
+400 39 is sleeping
+400 38 has taken a fork
+400 6 is eating
+400 38 has taken a fork
+400 38 is eating
+400 7 is sleeping
+400 8 has taken a fork
+400 8 is eating
+400 50 has taken a fork
+400 51 is sleeping
+400 50 has taken a fork
+400 50 is eating
+400 52 has taken a fork
+400 40 has taken a fork
+400 26 has taken a fork
+400 52 is eating
+400 40 has taken a fork
+400 40 is eating
+400 26 has taken a fork
+400 26 is eating
+400 44 has taken a fork
+400 15 is sleeping
+400 58 has taken a fork
+400 20 has taken a fork
+400 44 is eating
+400 58 is eating
+400 20 is eating
+400 28 has taken a fork
+400 22 has taken a fork
+400 18 has taken a fork
+400 28 is eating
+400 18 has taken a fork
+400 18 is eating
+400 5 is sleeping
+400 22 is eating
+400 66 has taken a fork
+400 66 is eating
+400 31 is sleeping
+400 65 is sleeping
+400 82 has taken a fork
+400 67 is sleeping
+400 41 is sleeping
+400 19 is sleeping
+400 80 is sleeping
+400 37 is sleeping
+800 45 has taken a fork
+800 43 is thinking
+800 43 has taken a fork
+800 43 has taken a fork
+800 43 is eating
+800 12 is sleeping
+800 76 is sleeping
+800 60 is sleeping
+800 27 is thinking
+800 27 has taken a fork
+800 27 has taken a fork
+800 27 is eating
 800 2 is sleeping
-800 3 has taken a fork
-800 3 has taken a fork
-800 3 is eating
+800 11 is thinking
+800 11 has taken a fork
+800 11 has taken a fork
+800 11 is eating
+800 44 is sleeping
+800 21 is thinking
+800 95 is thinking
+800 81 is sleeping
+800 95 has taken a fork
+800 28 is sleeping
+800 42 is sleeping
+800 75 is thinking
+800 64 is sleeping
+800 31 is thinking
+800 33 is thinking
+800 75 has taken a fork
+800 82 has taken a fork
+800 31 has taken a fork
+800 1 is thinking
+800 61 is thinking
+800 61 has taken a fork
+800 61 has taken a fork
+800 61 is eating
+800 82 is eating
+800 75 has taken a fork
+800 75 is eating
+800 62 is sleeping
+800 98 is sleeping
+800 88 is sleeping
+800 69 is thinking
+800 10 is sleeping
+800 94 is sleeping
+800 26 is sleeping
+800 77 is thinking
+800 77 has taken a fork
+800 77 has taken a fork
+800 70 is sleeping
+800 17 is thinking
+800 30 is sleeping
+800 74 is sleeping
+800 59 is thinking
+800 59 has taken a fork
+800 59 has taken a fork
+800 59 is eating
+800 14 is sleeping
+800 9 has taken a fork
+800 31 has taken a fork
+800 31 is eating
+800 9 has taken a fork
+800 9 is eating
+800 95 has taken a fork
+800 95 is eating
+800 71 is thinking
+800 71 has taken a fork
+800 1 has taken a fork
+800 79 is sleeping
+800 78 has taken a fork
 800 1 has taken a fork
 800 1 is eating
-1000 4 is thinking
-1000 3 is sleeping
-1000 2 is thinking
-1000 2 has taken a fork
-1000 2 has taken a fork
-1000 2 is eating
-1000 1 is sleeping
-1000 4 has taken a fork
-1000 4 has taken a fork
-1000 4 is eating
-1200 1 is thinking
-1200 2 is sleeping
-1200 4 is sleeping
-1200 3 is thinking
-1200 3 has taken a fork
-1200 1 has taken a fork
-1200 1 has taken a fork
-1200 1 is eating
-1200 3 has taken a fork
-1200 3 is eating
-1400 2 is thinking
-1400 2 has taken a fork
-1400 2 has taken a fork
-1400 2 is eating
-1400 4 is thinking
-1400 4 has taken a fork
-1400 4 has taken a fork
-1400 4 is eating
+800 53 has taken a fork
+800 71 has taken a fork
+800 71 is eating
+800 3 is thinking
+800 3 has taken a fork
+800 3 has taken a fork
+800 53 has taken a fork
+800 3 is eating
+800 53 is eating
+800 34 is sleeping
+800 40 is sleeping
+800 4 is sleeping
+800 66 is sleeping
+800 54 is sleeping
+800 18 is sleeping
+800 45 has taken a fork
+800 20 is sleeping
+800 45 is eating
+800 24 is sleeping
+800 52 is sleeping
+800 90 is sleeping
+800 36 is sleeping
+800 46 is sleeping
+800 48 is sleeping
+800 32 is sleeping
+800 85 is thinking
+800 85 has taken a fork
+800 85 has taken a fork
+800 16 is sleeping
+800 86 is sleeping
+800 96 is sleeping
+800 85 is eating
+800 56 is sleeping
+800 80 is thinking
+800 84 is sleeping
+800 8 is sleeping
+800 13 is thinking
+800 13 has taken a fork
+800 13 has taken a fork
+800 13 is eating
+800 72 is sleeping
+800 55 is thinking
+800 55 has taken a fork
+800 55 has taken a fork
+800 55 is eating
+800 22 is sleeping
+800 47 is thinking
+800 47 has taken a fork
+800 47 has taken a fork
+800 19 is thinking
+800 100 is sleeping
+800 19 has taken a fork
+800 19 has taken a fork
+800 19 is eating
+800 68 is sleeping
+800 47 is eating
+800 21 has taken a fork
+800 58 is sleeping
+800 21 has taken a fork
+800 6 is sleeping
+800 21 is eating
+800 25 is thinking
+800 51 is thinking
+800 38 is sleeping
+800 51 has taken a fork
+800 51 has taken a fork
+800 83 is thinking
+800 25 has taken a fork
+800 51 is eating
+800 50 is sleeping
+800 29 is thinking
+800 25 has taken a fork
+800 29 has taken a fork
+800 25 is eating
+800 29 has taken a fork
+800 69 has taken a fork
+800 29 is eating
+800 67 is thinking
+800 92 is sleeping
+800 69 has taken a fork
+800 67 has taken a fork
+800 37 is thinking
+800 67 has taken a fork
+800 67 is eating
+800 37 has taken a fork
+800 37 has taken a fork
+800 69 is eating
+800 37 is eating
+800 87 is thinking
+800 87 has taken a fork
+800 87 has taken a fork
+800 87 is eating
+800 77 is eating
+800 23 is thinking
+800 23 has taken a fork
+800 23 has taken a fork
+800 65 is thinking
+800 23 is eating
+800 65 has taken a fork
+800 65 has taken a fork
+800 65 is eating
+800 63 is thinking
+800 17 has taken a fork
+800 63 has taken a fork
+800 17 has taken a fork
+800 63 has taken a fork
+800 17 is eating
+800 63 is eating
+800 99 is thinking
+800 99 has taken a fork
+800 99 has taken a fork
+800 99 is eating
+800 91 is thinking
+800 91 has taken a fork
+800 91 has taken a fork
+800 89 is thinking
+800 91 is eating
+800 89 has taken a fork
+800 89 has taken a fork
+800 89 is eating
+800 7 is thinking
+800 7 has taken a fork
+800 49 is thinking
+800 41 is thinking
+800 41 has taken a fork
+800 49 has taken a fork
+800 49 has taken a fork
+800 41 has taken a fork
+800 49 is eating
+800 41 is eating
+800 7 has taken a fork
+800 7 is eating
+800 39 is thinking
+800 39 has taken a fork
+800 39 has taken a fork
+800 39 is eating
+800 33 has taken a fork
+800 33 has taken a fork
+800 33 is eating
+800 97 is thinking
+800 97 has taken a fork
+800 97 has taken a fork
+800 97 is eating
+800 57 is thinking
+800 57 has taken a fork
+800 57 has taken a fork
+800 57 is eating
+800 15 is thinking
+800 15 has taken a fork
+800 15 has taken a fork
+800 15 is eating
+800 73 is thinking
+800 73 has taken a fork
+800 73 has taken a fork
+800 73 is eating
+800 93 is thinking
+800 93 has taken a fork
+800 93 has taken a fork
+800 93 is eating
+800 5 is thinking
+800 5 has taken a fork
+800 5 has taken a fork
+800 5 is eating
+800 80 has taken a fork
+800 80 has taken a fork
+800 80 is eating
+800 35 is thinking
+800 35 has taken a fork
+800 35 has taken a fork
+800 35 is eating
+813 78 died

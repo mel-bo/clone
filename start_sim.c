@@ -6,7 +6,7 @@
 /*   By: mel-bout <mel-bout@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:40:46 by mel-bout          #+#    #+#             */
-/*   Updated: 2025/06/13 20:46:57 by mel-bout         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:30:06 by mel-bout         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	set_table(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->data->st_eating);
 	philo->data->counter++;
-	printf("%d\n", philo->data->counter);
 	pthread_mutex_unlock(&philo->data->st_eating);
 	while (1)
 	{
@@ -60,7 +59,6 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	set_table(philo);
-	// printf("la tablet est set\n");
 	philo->t_start = get_time();
 	if (philo->t_start > 0)
 		philo->lock = true;
